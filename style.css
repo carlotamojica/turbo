@@ -1,0 +1,189 @@
+@font-face {
+  font-family: "HelveticaNowDisplayXBlack";
+  src: url("./fonts/Helvetica Now Display XBlack.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+  --text-size: 40px;
+  --line-height: 0.95;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-size: 40px; /* tamaño de texto más pequeño en móvil */
+    --line-height: 0.95; /* interlineado un poco más grande en móvil */
+  }
+}
+
+.intro-text {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 620px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .intro-text {
+    padding: 16px;
+    max-width: 100%; /* opcional pero recomendable en móvil */
+  }
+}
+
+.intro-text {
+  font-size: var(--text-size);
+  line-height: var(--line-height);
+}
+
+.footer-links {
+  font-size: var(--text-size);
+  line-height: var(--line-height);
+}
+
+.footer-links a,
+.footer-links p {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  background: #00231f;
+}
+
+/* ---------- DVD ---------- */
+
+#dvd {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 480px;          /* DESKTOP */
+  aspect-ratio: 4 / 1;
+
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  display: none;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.logo-a {
+  display: block;
+}
+
+/* ---------- TEXTO CENTRAL ---------- */
+
+.intro-text {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "HelveticaNowDisplayXBlack", sans-serif;
+  font-size: 24px;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+
+  max-width: 620px;
+  text-align: center;
+
+  color: #f800ff;
+
+  pointer-events: none;
+  user-select: none;
+
+  transform-origin: center center;
+}
+
+/* ---------- FOOTER ---------- */
+
+.footer-links {
+  position: fixed;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: "HelveticaNowDisplayXBlack", sans-serif;
+  font-size: 24px;
+  line-height: 0.95;        /* MISMO interlineado que el texto central */
+  letter-spacing: -0.02em;
+
+  color: #f800ff;
+
+  pointer-events: auto;
+}
+
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 768px) {
+
+#dvd {
+  width: min(400px, 50vw);
+}
+
+.footer-links {
+  transform: none !important;
+}
+}
+
+* {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#dvd {
+  touch-action: none;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+.intro-text,
+.footer-links,
+.footer-links * {
+  font-size: var(--text-size) !important;
+  line-height: var(--line-height) !important;
+}
