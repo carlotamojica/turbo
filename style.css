@@ -12,7 +12,7 @@
 
 @media (max-width: 768px) {
   :root {
-    --text-size: 40px; /* tamaño de texto más pequeño en móvil */
+    --text-size: 30px; /* tamaño de texto más pequeño en móvil */
     --line-height: 0.78; /* interlineado un poco más grande en móvil */
   }
 }
@@ -157,7 +157,7 @@ body {
 @media (max-width: 768px) {
 
 #dvd {
-  width: min(400px, 50vw);
+  width: min(400px, 60vw);
 }
 
 .footer-links {
