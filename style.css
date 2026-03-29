@@ -7,13 +7,13 @@
 
 :root {
   --text-size: 40px;
-  --line-height: 0.95;
+  --line-height: 0.78;
 }
 
 @media (max-width: 768px) {
   :root {
     --text-size: 40px; /* tamaño de texto más pequeño en móvil */
-    --line-height: 0.95; /* interlineado un poco más grande en móvil */
+    --line-height: 0.78; /* interlineado un poco más grande en móvil */
   }
 }
 
