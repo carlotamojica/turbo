@@ -156,10 +156,9 @@ body {
 
 @media (max-width: 768px) {
 
-  /* logo más pequeño */
-  #dvd {
-    width: 350px;
-  }
+#dvd {
+  width: min(500px, 50vw);
+}
 
 .footer-links {
   transform: none !important;
