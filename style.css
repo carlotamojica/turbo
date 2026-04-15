@@ -191,25 +191,26 @@ html {
 /* ---------- RESPONSIVE ---------- */
 
 .intro-text {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 
+  gap: 0.18em;
   white-space: nowrap;
 
-  gap: 0.18em; /* 👈 aquí controlas el espacio real */
+  text-align: center;
 }
 
+/* palabras */
 .intro-text .line {
   display: inline;
 }
 
-/* MOBILE → 3 líneas */
+/* MOBILE → 3 líneas reales */
 @media (max-width: 768px) {
   .intro-text {
-    display: flex;
-    flex-direction: column;
-    gap: 0; /* sin espacio vertical extra */
+    flex-direction: column;   /* 👈 CLAVE */
+    gap: 0;                   /* sin separación vertical rara */
     white-space: normal;
   }
 
