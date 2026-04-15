@@ -12,7 +12,7 @@
 
 @media (max-width: 768px) {
   :root {
-    --text-size: 30px; /* tamaño de texto más pequeño en móvil */
+    --text-size: 45px; /* tamaño de texto más pequeño en móvil */
     --line-height: 0.85; /* interlineado un poco más grande en móvil */
   }
 }
@@ -186,4 +186,34 @@ html {
 .footer-links * {
   font-size: var(--text-size) !important;
   line-height: var(--line-height) !important;
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+.intro-text {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  white-space: nowrap;
+
+  gap: 0.18em; /* 👈 aquí controlas el espacio real */
+}
+
+.intro-text .line {
+  display: inline;
+}
+
+/* MOBILE → 3 líneas */
+@media (max-width: 768px) {
+  .intro-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* sin espacio vertical extra */
+    white-space: normal;
+  }
+
+  .intro-text .line {
+    display: block;
+  }
 }
