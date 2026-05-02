@@ -59,12 +59,21 @@
   box-sizing: border-box;
 }
 
+html {
+  background: #000000; /* 👈 esto es lo que Safari mira */
+}
+
 body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
 
-  background: #fe0100;
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #000000 1%,
+    #ffffff 100%
+  );
 }
 
 /* ---------- DVD ---------- */
@@ -74,12 +83,17 @@ body {
   top: 0;
   left: 0;
 
-  width: 480px;          /* DESKTOP */
+  width: 480px;
   aspect-ratio: 4 / 1;
 
   will-change: transform;
   transform: translateZ(0);
+
+  mix-blend-mode: difference; /* 👈 clave */
+  z-index: 2; /* por encima del texto */
 }
+
+
 
 .logo {
   width: 100%;
@@ -113,7 +127,9 @@ body {
   max-width: 620px;
   text-align: center;
 
-  color: #000000;
+  color: rgba(255, 255, 255, 0.25);
+
+  z-index: 1;
 
   pointer-events: none;
   user-select: none;
@@ -160,6 +176,7 @@ body {
   width: min(400px, 60vw);
 }
 
+
 .footer-links {
   transform: none !important;
 }
@@ -187,6 +204,8 @@ html {
   font-size: var(--text-size) !important;
   line-height: var(--line-height) !important;
 }
+
+
 
 /* ---------- RESPONSIVE ---------- */
 
