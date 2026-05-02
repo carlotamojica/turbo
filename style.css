@@ -34,19 +34,20 @@ html {
 }
 
 body {
-  width: 100%;
+  width: 100vw;
   min-height: 100svh;
   min-height: 100dvh; /* 👈 fallback moderno */
   overflow: hidden;
 
   display: block;            
+}
 
-  background: linear-gradient(
-    to bottom,
-    #000000 0%,
-    #000000 1%,
-    #ffffff 100%
-  );
+body {
+  padding:
+    env(safe-area-inset-top)
+    env(safe-area-inset-right)
+    env(safe-area-inset-bottom)
+    env(safe-area-inset-left);
 }
 
 body::before {
@@ -153,6 +154,12 @@ body::before {
 .footer-links a {
   color: inherit;
   text-decoration: none;
+}
+
+* {
+  -webkit-user-select: none; /* Safari */
+  -webkit-touch-callout: none; /* evita menú al mantener pulsado */
+  user-select: none;
 }
 
 
