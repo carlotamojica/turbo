@@ -28,7 +28,7 @@
 
 html {
   height: 100%;
-  background: #ffffff;
+  background: #000000;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
@@ -36,10 +36,24 @@ html {
 body {
   width: 100%;
   min-height: 100svh;
+  min-height: 100dvh; /* 👈 fallback moderno */
   overflow: hidden;
 
-  padding-bottom: env(safe-area-inset-bottom); /* 👈 AÑADIR */
-  background-clip: content-box;                /* 👈 AÑADIR */
+  display: block;            
+
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #000000 1%,
+    #ffffff 100%
+  );
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
 
   background: linear-gradient(
     to bottom,
@@ -140,6 +154,8 @@ body {
   color: inherit;
   text-decoration: none;
 }
+
+
 
 /* ======================================================
    MOBILE
