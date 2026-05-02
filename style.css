@@ -162,6 +162,11 @@ body::before {
   user-select: none;
 }
 
+img, svg {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
 
 
 /* ======================================================
