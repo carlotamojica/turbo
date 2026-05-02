@@ -28,15 +28,18 @@
 
 html {
   height: 100%;
-  background: #000; /* 👈 para integrar Safari */
+  background: #ffffff;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
 }
 
 body {
   width: 100%;
-  min-height: 100svh; /* 👈 FIX iOS */
+  min-height: 100svh;
   overflow: hidden;
+
+  padding-bottom: env(safe-area-inset-bottom); /* 👈 AÑADIR */
+  background-clip: content-box;                /* 👈 AÑADIR */
 
   background: linear-gradient(
     to bottom,
@@ -160,11 +163,11 @@ body {
 /* 📱 horizontal (landscape) */
 @media (max-width: 900px) and (orientation: landscape) {
   #dvd {
-    width: min(320px, 40vw); /* 👈 evita logo gigante */
+    width: 180px;
   }
 
   .intro-text {
-    white-space: nowrap; /* 👈 vuelve a 1 línea */
+    white-space: nowrap;
     flex-direction: row;
   }
 }
