@@ -36,7 +36,7 @@ html {
 body {
   width: 100vw;
   min-height: 100svh;
-  min-height: 100dvh; /* 👈 fallback moderno */
+  min-height: 100dvh;
   overflow: hidden;
 
   display: block;            
@@ -71,7 +71,7 @@ body::before {
   top: 0;
   left: 0;
 
-  width: min(480px, 60vw); /* 👈 responsive real */
+  width: min(480px, 60vw);
   aspect-ratio: 4 / 1;
 
   will-change: transform;
@@ -95,7 +95,7 @@ body::before {
   display: block;
 }
 
-/* ---------- TEXTO CENTRAL ---------- */
+/* ---------- TEXT ---------- */
 
 .intro-text {
   position: fixed;
@@ -121,10 +121,9 @@ body::before {
   pointer-events: none;
 
   gap: 0.18em;
-  white-space: nowrap; /* 👈 desktop = 1 línea */
+  white-space: nowrap;
 }
 
-/* palabras */
 .intro-text .line {
   display: inline;
 }
@@ -157,8 +156,8 @@ body::before {
 }
 
 * {
-  -webkit-user-select: none; /* Safari */
-  -webkit-touch-callout: none; /* evita menú al mantener pulsado */
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
   user-select: none;
 }
 
@@ -173,7 +172,6 @@ img, svg {
    MOBILE
 ====================================================== */
 
-/* 📱 vertical */
 @media (max-width: 768px) and (orientation: portrait) {
   .intro-text {
     flex-direction: column;
@@ -188,7 +186,6 @@ img, svg {
   }
 }
 
-/* 📱 horizontal (landscape) */
 @media (max-width: 900px) and (orientation: landscape) {
   #dvd {
     width: 180px;
